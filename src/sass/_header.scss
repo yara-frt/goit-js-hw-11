@@ -1,0 +1,25 @@
+.search-form {
+    background-color: rgb(49, 136, 218);
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.search-input {
+    width: 400px;
+    outline: none;
+    border: solid rgb(15, 71, 136) 1px;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.search-button {
+    width: 80px;
+    background-color: rgb(51, 163, 197);
+    outline: none;
+    border: solid rgb(15, 71, 136) 1px;
+    border-radius: 3px;
+    padding: 5px;
+}
+

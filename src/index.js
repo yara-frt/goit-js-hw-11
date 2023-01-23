@@ -34,6 +34,7 @@ function onSearch(event) {
      name = event.target.elements[0].value.trim();
     if (name !== "") {
         pixabayApi(name);
+        renderPhoto();
         addLoadMore();
       
     } else {
@@ -72,16 +73,19 @@ async function pixabayApi(name, page) {
             clearLoadMore();
         }
 
-        
-        
-        createMarkup(resp.data)
-        console.log(resp)
-        
+        return resp.data
 
     } catch (error) {
         console.log(error);
     }
 };
+
+async function renderPhoto() {
+    const res = await pixabayApi(name, page);
+    console.log(res)
+    createMarkup(res);
+}
+
 
 let originalGallery = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
@@ -125,5 +129,6 @@ refs.loadMore.addEventListener('click', onLoadMore);
 function onLoadMore() {
     page += 1
     pixabayApi(name, page);
+    renderPhoto();
     addLoadMore();   
 }

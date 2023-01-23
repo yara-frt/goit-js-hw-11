@@ -31,7 +31,7 @@ function onSearch(event) {
     event.preventDefault();
 
     refs.gallery.innerHTML = '';
-    const name = event.target.elements[0].value.trim();
+     name = event.target.elements[0].value.trim();
     if (name !== "") {
         pixabayApi(name);
         addLoadMore();
@@ -46,7 +46,7 @@ function onSearch(event) {
 const BASE_URL = 'https://pixabay.com/api/';
 
 async function pixabayApi(name, page) {
-    options = {
+    const options = {
         params: {
             key: '33032852-f9b14fb0441fac63083ffdb75',
             q: name,
